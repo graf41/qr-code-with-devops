@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./api
+    container_name: qr_back
+    ports:
+      - "8000:8000"
+    environment:
+      - STORAGE_MODE=local
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build:
+      context: ./front-end-nextjs
+    container_name: qr_front
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend

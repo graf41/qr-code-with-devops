@@ -21,7 +21,7 @@ jobs:
       - name: Build and push DockerBackend image
         uses: docker/build-push-action@v4
         with:
-            context: ./api #.
+            context: ./api #..
             push: true #для дальнешего kubеr
             tags: |
                 fluxxury/qr-backend:latest

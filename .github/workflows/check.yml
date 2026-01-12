@@ -24,8 +24,8 @@ jobs:
             context: ./api
             push: true #для дальнешего kuber
             tags: |
-                user/qr-backend:latest
-                user/qr-backend:${{ github.sha }}
+                fluxxury/qr-backend:latest
+                fluxxury/qr-backend:${{ github.sha }}
        
 
   frontend:
@@ -46,5 +46,5 @@ jobs:
             context: ./front-end-nextjs
             push: true #для дальнешего kuber
             tags: |
-                user/qr-frontend:latest
-                user/qr-frontend:${{ github.sha }}
+                fluxxury/qr-frontend:latest
+                fluxxury/qr-frontend:${{ github.sha }}
